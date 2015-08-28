@@ -1,0 +1,7 @@
+<% var last = breadcrumbs.length - 1 %>
+<ul class="breadcrumb">
+    <% for(var i = 0; i < last; i++) { %>
+    <li><a href="<%=breadcrumbs[i].url %>"><%= breadcrumbs[i].name %></a></li>
+    <% } %>
+    <li class="active"><%= breadcrumbs[last].name %></li>
+</ul>

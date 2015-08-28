@@ -1,0 +1,40 @@
+<% layout('../layout') -%>
+
+<section id="page-header">
+    <div class="container">
+        <h4 class="text-center">
+            <p><%= company.phones[0].number %></p>
+            <p><%= company.phones[1].number %></p>
+        </h4>
+        <h1><%= article.title.main %></h1>
+        <p class="lead"><%= article.title.secondary %></p>
+        <% include ../partials/breadcrumbs.ejs %>
+    </div>
+</section>
+
+<section id="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <address>
+                    <strong><%= company.name %></strong><br>
+                    <%= company.address.full %><br>
+                    <abbr title="Phone">Тел:</abbr> <%= company.phones[0].number + " , " + company.phones[1].number %>
+                </address>
+                <address>
+                    <strong>Почтовый адрес:</strong><br>
+                    <a href="mailto:<%= company.email %>"><%= company.email %></a>
+                </address>
+                <ul class="list-inline">
+                    <li><a class="btn btn-primary" href="/files/requisites.pdf">Реквизиты</a></li>
+                    <li><a class="btn btn-primary" href="/files/contract.doc">Типовой договор</a></li>
+                </ul>
+                <%- article.body.text %>
+            </div>
+            <div class="col-lg-6">
+                <p>Где мы находимся:</p>
+                <img class="img-responsive" src="/img/map.png">
+            </div>
+        </div>
+    </div>
+</section>

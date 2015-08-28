@@ -1,0 +1,35 @@
+<% layout('../../layout') -%>
+
+<section id="page-header">
+    <div class="container">
+        <h4 class="text-center"><%= company.phones[0].number + " | " + company.phones[1].number %></h4>
+        <h1><%= article.title.main %></h1>
+        <p class="lead"><%= article.title.secondary %></p>
+        <% include ../../partials/breadcrumbs.ejs %>
+    </div>
+</section>
+
+<section id="content">
+    <div class="container">
+        <form action="/thumbnails/insert" method="post" enctype="multipart/form-data" rele="form">
+            <div class="form-group">
+                <label for="title">Заголовок</label>
+                <input type="text" class="form-control" id="title" name="title" required>
+            </div>
+            <div class="form-group">
+                <label for="text">Текст</label>
+                <textarea rows="3" class="form-control" id="text" name="text"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="url">Ссылка</label>
+                <input type="text" class="form-control" id="url" name="url" required>
+            </div>
+            <div class="form-group">
+                <input type="file" name="media" multiple="multiple">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-danger">Опубликовать</button>
+            </div>
+        </form>
+    </div>
+</section>

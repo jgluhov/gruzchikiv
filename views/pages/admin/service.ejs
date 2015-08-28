@@ -1,0 +1,35 @@
+<% layout('../../simpleLayout') -%>
+
+<div class="container">
+    <a href="/admin/articles">Вернуть обратно</a>
+    <hr>
+
+    <form id="<%=service._id%>" action="/admin/service/" role="form" name="form-edit-service">
+        <div class="form-group">
+            <label for="title">Заголовок</label>
+            <textarea type="text" class="form-control" id="title" name="title">
+                <%= service.title.main %>
+            </textarea>
+        </div>
+        <div class="form-group">
+            <label for="subtitle">Подзаголовок</label>
+            <textarea type="text" class="form-control" id="subtitle" name="subtitle">
+                <%=service.title.secondary%>
+            </textarea>
+        </div>
+        <div class="form-group">
+            <label for="sideText">Боковой текст</label>
+            <textarea type="text" class="form-control" id="sideText" name="sideText">
+                <%=service.body.summary%>
+            </textarea>
+        </div>
+        <div class="form-group">
+            <label for="mainText">Главный текст</label>
+            <textarea type="text" class="form-control" id="mainText" name="mainText">
+                <%=service.body.text%>
+            </textarea>
+        </div>
+        <button type="submit" class="btn btn-default">Обновить запись</button>
+    </form>
+
+</div>

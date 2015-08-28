@@ -1,0 +1,89 @@
+<% layout('../layout') -%>
+
+<section id="page-header">
+    <div class="container">
+        <h4 class="text-center">
+            <p><%= company.phones[0].number %></p>
+            <p><%= company.phones[1].number %></p>
+        </h4>
+        <h1><%= articles[0].title.main %></h1>
+        <p class="lead"><%= articles[0].title.secondary %></p>
+        <% include ../partials/breadcrumbs.ejs %>
+    </div>
+</section>
+
+<section id="content">
+    <div class="container">
+        <div class="tabbable">
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#tab11" data-toggle="tab">Транспорт</a></li>
+                <li class=""><a href="#tab12" data-toggle="tab">Грузчики</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab11">
+                    <% cars.forEach(function(car) { %>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th colspan="4"><%= car.name %><br><%= car.desc %></th>
+                            </tr>
+                            <tr>
+                                <th class="col-sm-5"><%= car.header.inside[0] %></th>
+                                <th class="col-sm-1"><%= car.header.inside[1] %></th>
+                                <th class="col-sm-5"><%= car.header.outside[0] %></th>
+                                <th class="col-sm-1"><%= car.header.outside[1] %></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td colspan="2" class="text-center"><%= car.text.inside %></td>
+                                <td colspan="2" class="text-center"><%= car.text.outside %></td>
+                            </tr>
+                            <% car.data.forEach(function(data) { %>
+                                <tr>
+                                    <td><%= data.inside.name %></td>
+                                    <td><%= data.inside.cost %></td>
+                                    <td><%= data.outside.name %></td>
+                                    <td><%= data.outside.cost %></td>
+                                </tr>
+                            <% }) %>
+                            </tbody>
+                        </table>
+                    </div>
+                    <%})%>
+                    <%- articles[1].body.text %>
+                </div>
+                <div class="tab-pane" id="tab12">
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th class="col-sm-2"><%= movers.headers[0] %></th>
+                                <th class="col-sm-2"><%= movers.headers[1] %></th>
+                                <th class="col-sm-2"><%= movers.headers[2] %></th>
+                                <th class="col-sm-2"><%= movers.headers[3] %></th>
+                                <th class="col-sm-4"><%= movers.headers[4] %></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <% movers.data.forEach(function(data) { %>
+                            <tr>
+                                <td><%= data.name %></td>
+                                <td><%= data.hour %></td>
+                                <td><%= data.min %></td>
+                                <td><%= data.total %></td>
+                                <td><%= data.desc %></td>
+                            </tr>
+                            <% }) %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+

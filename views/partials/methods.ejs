@@ -1,0 +1,9 @@
+<%- pay_methods.text %>
+<div class="well well-sm">
+    <ul class="list-inline">
+        <% pay_methods.items.forEach(function(method) { %>
+        <li><a href="#" data-toggle="tooltip" data-placement="top"
+               title="" data-original-title="<%= method.title %>"><img src="<%= method.image.url %>"></a></li>
+        <% }) %>
+    </ul>
+</div>

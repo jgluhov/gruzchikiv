@@ -1,0 +1,20 @@
+<% layout('../layout') -%>
+
+<section id="page-header">
+    <div class="container">
+        <h4 class="text-center"><%= company.phones[0].number + " | " + company.phones[1].number %></h4>
+        <h1><%= article.title.main %></h1>
+        <p class="lead"><%= article.title.secondary %></p>
+        <% include ../partials/breadcrumbs.ejs %>
+    </div>
+</section>
+
+<section id="content">
+    <div class="container">
+        <% news.forEach(function(news) { %>
+            <h3><%- news.title %></h3>
+            <p><%= news.date.toLocaleDateString() %></p>
+            <%- news.text %>
+        <% }) %>
+    </div>
+</section>

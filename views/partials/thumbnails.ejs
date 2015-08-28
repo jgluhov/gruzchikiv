@@ -1,0 +1,17 @@
+<section id="thumbnails">
+    <div class="container">
+        <div class="thumbnails">
+            <div class="row">
+                <% thumbnails.forEach(function(thumbnail) { %>
+                <div class="col-xs-12 col-sm-12 col-md-4">
+                    <a href="<%= thumbnail.url %>">
+                        <img src="<%= thumbnail.images[0].src.url %>" alt="<%= thumbnail.images[0].alt %>">
+                    </a>
+                    <h2><a href="<%= thumbnail.url %>"><%- thumbnail.title %></a></h2>
+                    <%- thumbnail.text %>
+                </div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+</section>

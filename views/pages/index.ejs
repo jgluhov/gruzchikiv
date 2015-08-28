@@ -1,0 +1,51 @@
+<% layout('../layout') -%>
+
+<section id="page-header">
+    <div class="container">
+        <div class="jumbotron">
+            <h1><%= web.label.toUpperCase() %></h1>
+            <p><%= company.phones[0].number %></p>
+            <p><%= company.phones[1].number %></p>
+            <% include ../partials/callback.ejs %>
+        </div>
+        <%- promotion.text %>
+    </div>
+</section>
+
+<% include ../partials/thumbnails.ejs %>
+
+<section id="content-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-9">
+                <p class="lead"><%= articles[0].title.main %></p>
+                <%- articles[0].body.text %>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-3">
+                <%- include ../partials/methods.ejs %>
+            </div>
+        </div>
+    </div>
+</section>
+
+<% include ../partials/letters.ejs %>
+
+<section id="content-secondary">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-9">
+                <p class="lead"><%= articles[1].title.main %></p>
+                <%- articles[1].body.text %>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-3">
+                <%- include ../partials/calculator.ejs %>
+            </div>
+        </div>
+        <p class="lead"><%= articles[2].title.main %></p>
+        <%- articles[2].body.text %>
+        <p class="lead"><%= articles[3].title.main %></p>
+        <%- articles[3].body.text %>
+    </div>
+</section>
+
+

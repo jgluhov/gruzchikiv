@@ -1,0 +1,14 @@
+<section id="letters">
+    <div class="well well-sm">
+        <div class="container">
+            <p class="lead"><%= letters.title %></p>
+            <ul class="list-inline">
+                <% letters.items.forEach(function(item) { %>
+                <li><a href="<%= item.url %>" class="thumbnail fancybox" title="<%= item.title %>">
+                        <img src="<%= item.url %>" alt="">
+                    </a></li>
+                <% }) %>
+            </ul>
+        </div>
+    </div>
+</section>

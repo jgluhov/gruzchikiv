@@ -1,0 +1,23 @@
+<% layout('../../layout') -%>
+
+<section id="page-header">
+    <div class="container">
+        <h4 class="text-center"><%= company.phones[0].number + " | " + company.phones[1].number %></h4>
+        <h1><%= title %></h1>
+        <ol class="breadcrumb">
+            <% breadcrumbs.forEach(function(breadcrumb) { %>
+            <li><a href="<%=breadcrumb.url%>"><%= breadcrumb.name %></a></li>
+            <% }) %>
+        </ol>
+    </div>
+</section>
+
+<section id="content">
+    <div class="container">
+        <ol>
+            <% services.forEach(function(service) { %>
+                <li><a href="service/<%= service.name %>"><%= service.title.main %></a></li>
+            <% }) %>
+        </ol>
+    </div>
+</section>

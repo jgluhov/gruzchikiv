@@ -1,0 +1,15 @@
+<% layout('../layout') -%>
+
+<section id="page-header">
+    <div class="container">
+        <h1 class="page-header">Загрузка файлов</h1>
+        <form action="/upload" method="post" enctype="multipart/form-data" role="form">
+            <div class="form-group">
+                <input type="file" id="inputFiles" name="images" multiple title="Обзор">
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-success" >Загрузить</button>
+            </div>
+        </form>
+    </div>
+</section>

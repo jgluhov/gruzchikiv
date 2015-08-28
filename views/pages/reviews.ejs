@@ -1,0 +1,27 @@
+<% layout('../layout') -%>
+
+<section id="page-header">
+    <div class="container">
+        <h4 class="text-center">
+            <p><%= company.phones[0].number %></p>
+            <p><%= company.phones[1].number %></p>
+        </h4>
+        <h1><%= article.title.main %></h1>
+        <p class="lead"><%= article.title.secondary %></p>
+        <% include ../partials/breadcrumbs.ejs %>
+    </div>
+</section>
+
+<section id="content">
+    <div class="container">
+        <% reviews.forEach(function(review) { %>
+        <blockquote>
+            <p id="date"><%= review.created_at %></p>
+            <p class="lead"><%= review.name %></p>
+            <%- review.text %>
+        </blockquote>
+        <% }) %>
+        <hr>
+        <% include ../partials/review.ejs %>
+    </div>
+</section>

@@ -1,0 +1,34 @@
+<% layout('../layout') -%>
+
+<section id="page-header">
+    <div class="container">
+        <h4 class="text-center"><%= company.phones[0].number + " | " + company.phones[1].number %></h4>
+        <h1><%= article.title.main %></h1>
+        <p class="lead"><%= article.title.secondary %></p>
+        <% include ../partials/breadcrumbs.ejs %>
+    </div>
+</section>
+
+<section id="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-6 col-lg-6">
+                <div class="row">
+                    <% article.images.forEach(function(image) { %>
+                    <div class="col-lg-6 col-sm-6 col-xs-6">
+                        <a href="#" class="thumbnail">
+                            <img src="<%= image.url %>" alt="">
+                        </a>
+                    </div>
+                    <% }) %>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-6">
+                <div class="well well-sm">
+                    <%- article.body.summary %>
+                </div>
+            </div>
+        </div>
+        <%- article.body.text %>
+    </div>
+</section>

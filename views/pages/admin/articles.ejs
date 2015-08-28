@@ -1,0 +1,24 @@
+<% layout('../../simpleLayout') -%>
+
+<div class="container">
+    <a href="/">Вернуться на главную</a>
+    <h3>Список статей</h3>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <ul>
+                <%data.articles.forEach(function(article){%>
+                    <li><a href="article/<%=article._id%>"><%=article.title.main%></a></li>
+                <%})%>
+            </ul>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <ul>
+                <%data.services.forEach(function(service){ %>
+                    <li><a href="service/<%=service._id%>"><%=service.title.main%></a></li>
+                <%})%>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+<div class="well">
+    <p class="lead text-muted">Оставить отзыв</p>
+    <script>var RecaptchaOptions = { theme : 'white' }; </script>
+
+    <form method="post" action="/reviews" role="form">
+        <div class="form-group">
+            <label for="inputName">Имя:</label>
+            <input type="text" class="form-control" id="inputName" name="name" required="true">
+        </div>
+        <div class="form-group">
+            <label for="txtMessage">Сообщение:</label>
+            <textarea class="form-control" rows="2" id="txtMessage" name="message"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="recaptcha">Проверка:</label>
+            <%- recaptcha_form %>
+        </div>
+        <button type="submit" class="btn btn-default">Опубликовать</button>
+    </form>
+    <br>
+    <div class="alert alert-success alert-dismissible hidden" role="alert">
+        <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        Сообищение успешно отправлено
+    </div>
+</div>

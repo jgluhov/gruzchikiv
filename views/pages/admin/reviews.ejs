@@ -1,0 +1,14 @@
+<% layout('../../simpleLayout') -%>
+
+<div class="container">
+    <h3>Список статей</h3>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <ul>
+                <%data.forEach(function(article){%>
+                <li><a href="article/<%=article._id%>"><%=article.title.main%></a></li>
+                <%})%>
+            </ul>
+        </div>
+    </div>
+</div>

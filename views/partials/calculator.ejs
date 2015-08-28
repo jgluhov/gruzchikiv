@@ -1,0 +1,31 @@
+<div class="well">
+    <p class="lead text-center">Калькулятор</p>
+    <form class="form-horizontal" id="calc-form" name="calc-form">
+        <div class="form-group">
+            <input type="text" class="form-control text-right" name="display" placeholder="0 руб." focused="" disabled="">
+        </div>
+        <div class="form-group btn-group" data-toggle="buttons" data-effect="fall">
+            <label class="btn btn-primary">
+                <input type="radio" id="day" name="time" value="0">День
+            </label>
+            <label class="btn btn-primary">
+                <input type="radio" id="night" name="time" value="1">Ночь
+            </label>
+        </div>
+        <div class="form-group">
+            <input type="number" name="hours" class="form-control" placeholder="Время (час)">
+        </div>
+        <div class="form-group">
+            <input type="number" name="people" class="form-control" placeholder="Кол-во грузчиков">
+        </div>
+        <div class="form-group">
+            <input type="text" name="type" class="form-control" placeholder="Тип работы (вывоз мусора и т.д.)">
+        </div>
+        <div class="form-group">
+            <input type="text" name="contacts" class="form-control" placeholder="Контакты (телефон, эл. почта)">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success btn-block">Рассчитать</button>
+        </div>
+    </form>
+</div>

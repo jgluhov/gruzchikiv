@@ -1,0 +1,54 @@
+
+<section id="footer-main">
+    <div class="well">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-6">
+                    <dl>
+                        <dt><i class="fa fa-map-marker"></i> Адрес</dt>
+                        <dd><%= company.address.full %></dd>
+                    </dl>
+                    <dl>
+                        <dt><i class="fa fa-phone"></i> Контакты</dt>
+                        <dd class="phones">
+                            <%= company.phones[0].number %> | <%= company.phones[1].number %>
+                        </dd>
+                    </dl>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-6">
+                    <strong><%= review.name %></strong>
+                    <%- review.text %>
+                    <% include counters/yandex.ejs %>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="footer-secondary">
+    <div class="well well-sm">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-8">
+                    <ul class="nav nav-pills">
+                        <% menu.bottom.items.forEach(function(item) { %>
+                        <% if(item.icon != null) { %>
+                        <li><a href="<%=item.url%>"><i class="fa <%=item.icon %>"></i> <%=item.text %></a></li>
+                        <% } else { %>
+                        <li><a href="<%=item.url%>"><%=item.text %></a></li>
+                        <% } %>
+                        <% }) %>
+                    </ul>
+                </div>
+                <div class="col-xs-4">
+                    <div class="text-right">
+                        <p>© <%= new Date().getFullYear() %></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</section>
+
+

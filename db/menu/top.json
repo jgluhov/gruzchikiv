@@ -1,0 +1,41 @@
+{
+    "title": "Передвинь шкаф",
+    "left": {
+        "items": [
+            {
+                "text": "О компании",
+                "icon": null,
+                "url": "#",
+                "sub_items": [
+                    { "text" : "О нас", "icon" : null, "url": "/about" },
+                    { "text" : "Новости", "icon" : null, "url": "/news" },
+                    { "text" : "Вакансии", "icon" : null, "url": "/vacancies" }
+                ]
+            },
+            {
+                "text": "Услуги",
+                "icon": null,
+                "url": "#",
+                "sub_items": [
+                    { "text" : "Грузоперевозки", "icon" : null, "url": "/service/gruzoperevozki" },
+                    { "text" : "Переезды", "icon" : null, "url": "/service/pereyezdy" },
+                    { "text" : "Грузчики", "icon" : null, "url": "/service/gruzchiki" },
+                    { "text" : "Разнорабочие", "icon" : null, "url": "/service/raznorabochiye" },
+                    { "text" : "Такелажники", "icon" : null, "url": "/service/takelazhniki" },
+                    { "text" : "Разгрузка / Погрузка", "icon" : null, "url": "/service/razgruzka_pogruzka" },
+                    { "text" : "Сборка / Разборка", "icon" : null, "url": "/service/sborka_razborka" },
+                    { "text" : "Вывоз мусора", "icon" : null, "url": "/service/vyvoz_musora" },
+                    { "text" : "Упаковка", "icon" : null, "url": "/service/upakovka" }
+                ]
+            },
+            { "text": "Прайс-лист", "icon": null, "sub_items": null, "url": "/price" },
+            { "text": "Отзывы", "icon": null, "sub_items": null, "url": "/reviews" },
+            { "text": "Контакты", "icon": null, "sub_items": null, "url": "/contacts" }
+        ]
+    },
+    "right": {
+        "items": [
+            { "text": "Блог", "icon": null, "sub_items": null, "url": "/blog" }
+        ]
+    }
+}

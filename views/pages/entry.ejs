@@ -1,0 +1,46 @@
+<% layout('../layout') -%>
+
+<section id="page-header">
+    <div class="container">
+        <h4 class="text-center">
+            <p><%= company.phones[0].number %></p>
+            <p><%= company.phones[1].number %></p>
+        </h4>
+        <h1><%= article.title.main %></h1>
+        <p class="lead"><%= article.title.secondary %></p>
+        <ol class="breadcrumb">
+            <% breadcrumbs.forEach(function(breadcrumb) { %>
+            <li><a href="<%=breadcrumb.url%>"><%= breadcrumb.name %></a></li>
+            <% }) %>
+        </ol>
+    </div>
+</section>
+
+<section id="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-md-6 col-lg-6">
+                <div class="row">
+                    <% if(article.images != null) { %>
+                        <% article.images.forEach(function(image) { %>
+                        <div class="col-lg-6 col-sm-6 col-xs-6">
+                            <a href="#" class="thumbnail">
+                                <img src="<%= image.url %>" alt="">
+                            </a>
+                        </div>
+                        <% }) %>
+                    <%}%>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-6 col-lg-6">
+                <div class="well well-sm">
+                    <p class="blog-post-meta" id="date">
+                    <%= article.date %></p>
+                </div>
+            </div>
+        </div>
+        <%- article.body.text %>
+        <hr>
+        <%- include ../partials/disqus.ejs %>
+    </div>
+</section>

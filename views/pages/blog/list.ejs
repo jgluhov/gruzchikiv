@@ -1,0 +1,35 @@
+<% layout('../../layout') -%>
+
+<section id="page-header">
+    <div class="container">
+        <h4 class="text-center"><%= company.phones[0].number + " | " + company.phones[1].number %></h4>
+        <h1><%= article.title.main %></h1>
+        <p class="lead"><%= article.title.secondary %></p>
+        <% include ../../partials/breadcrumbs.ejs %>
+    </div>
+</section>
+
+<section id="content">
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <a href="/blog/add" class="btn btn-info">
+                    <span class="fa fa-plus"></span> Добавить
+                </a>
+            </div>
+            <div class="panel-body">
+                <ul>
+                <% entries.forEach(function(entry) { %>
+                <li><a href="/blog/<%= entry._id %>"><%= entry.title.main %></a> - <a href="/blog/remove/<%= entry._id%>" class="text-danger"> Удалить</a></li>
+                <%})%>
+                </ul>
+            </div>
+            <div id="alert-delete-entry" class="alert alert-danger alert-dismissible hidden" role="alert">
+                <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                Произошла ошибка при удалении статьи
+            </div>
+        </div>
+    </div>
+</section>
+
+

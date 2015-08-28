@@ -1,0 +1,7 @@
+User-agent: Yandex
+Allow: /public
+Disallow: /
+
+User-agent: *
+Allow: /public
+Disallow: /

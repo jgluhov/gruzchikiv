@@ -1,0 +1,47 @@
+<% layout('../layout') -%>
+
+<section id="page-header">
+    <div class="container">
+        <h4 class="text-center">
+            <p><%= company.phones[0].number %></p>
+            <p><%= company.phones[1].number %></p>
+        </h4>
+        <h1><%= article.title.main %></h1>
+        <p class="lead"><%= article.title.secondary %></p>
+        <% include ../partials/breadcrumbs.ejs %>
+    </div>
+</section>
+
+<section id="content">
+    <div class="container">
+
+        <% entries.forEach(function(entry) { %>
+        <div class="row">
+            <div class="col-xs-12 col-md-5 col-lg-5">
+                <div class="row">
+                    <% if(entry.images != null) { %>
+                        <% entry.images.forEach(function(image) { %>
+                        <div class="col-lg-6 col-md-6 col-sm-3 col-xs-6">
+                            <a href="#" class="thumbnail">
+                                <img src="<%= image.url %>" alt="">
+                            </a>
+                        </div>
+                        <% }) %>
+                    <% } %>
+                </div>
+            </div>
+            <div class="col-xs-12 col-md-7 col-lg-7">
+                <div class="well well-sm">
+                    <div class="blog-post">
+                        <a href="/blog/<%= entry.id %>"><h2 class="blog-post-title"><%= entry.title.main %></h2></a>
+                        <p class="blog-post-meta" id="date"><%= entry.date %></p>
+                        <%- entry.body.text.split('</p>')[0] %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% }) %>
+
+    </div>
+</section>
+

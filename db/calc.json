@@ -1,0 +1,8 @@
+{
+    "minimum": 4,
+    "cost": {
+        "day": 300,
+        "night": 350
+    },
+    "currency": " руб."
+}
